@@ -24,4 +24,4 @@ start(bot);
 matn(bot);
 funksiya(bot);
 
-bot.launch();
+bot.startPolling();
