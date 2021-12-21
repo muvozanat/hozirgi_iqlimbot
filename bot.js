@@ -24,4 +24,23 @@ start(bot);
 matn(bot);
 funksiya(bot);
 
-bot.startPolling();
+bot
+    .launch({
+      polling: {
+        allowedUpdates: [
+          'callback_query',
+          'chosen_inline_result',
+          'edited_message',
+          'inline_query',
+          'message',
+          'poll',
+          'poll_answer',
+          'chat_member',
+        ] as any,
+      },
+    })
+    .then(() => {
+      console.info('Bot on the main thread is up and running')
+    })
+    .catch(report)
+}
